@@ -12,28 +12,35 @@ module.exports = (sequelize) => {
         allowNull: false,
         unique: true,
       },
+
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       flagImg: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+
       continent: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       capital: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       subregion: {
         type: DataTypes.STRING,
       },
+
       area: {
         type: DataTypes.FLOAT,
       },
+
       population: {
         type: DataTypes.INTEGER,
       },
