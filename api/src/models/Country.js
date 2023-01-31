@@ -8,41 +8,44 @@ module.exports = (sequelize) => {
     {
       id: {
         type: DataTypes.STRING(3),
-        primaryKey: true,
         allowNull: false,
-        unique: true,
+        primaryKey: true,
+        validate: {
+          len: [3],
+        },
       },
-
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
-      flagImg: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-
       continent: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
       capital: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
+        defaultValue: "Without Capital City",
       },
-
       subregion: {
         type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "Without Subregion",
       },
-
       area: {
         type: DataTypes.FLOAT,
+        allowNull: false,
       },
-
       population: {
         type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      flags: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          isUrl: true,
+        },
       },
     },
     {

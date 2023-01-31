@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getActivities } = require("../../controllers/get/getActivity");
+const { getActivities } = require("../../controllers/get/getActivitys");
 
 
 const router = Router();

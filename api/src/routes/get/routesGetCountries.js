@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { getCountries, getCountryId } = require('../../controllers/get/getCountry');
+const { getCountryId, getAllCountriesDb } = require('../../controllers/get/getCountrys');
 
 
 const router = Router();
@@ -7,7 +7,7 @@ const router = Router();
 
 router.get('/', async (req, res) => {
     const {name} = req.query;
-    const countries = await getCountries();
+    const countries = await getAllCountriesDb();
     try {
         if(name){
         let count = countries?.filter(p => p.name?.toLowerCase() === name?.toLowerCase());
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const allCountries = await getCountries();
+      const allCountries = await getAllCountriesDb();
       const filterCountries = await getCountryId(id, allCountries);
       filterCountries ? res.status(200).send(filterCountries) : res.status(404).send("Country not found by ID");
     } catch (error) {
