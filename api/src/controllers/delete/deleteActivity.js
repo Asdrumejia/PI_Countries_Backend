@@ -1,9 +1,9 @@
 const { Activity } = require("../../db");
 
 const deleteActivity = async function (id){
-    const deleteDb = await Activity.findByPk(id)
+    const deleteDb = await Activity.findByPk(id);
  
-    const destroyActivity = deleteDb?.destroy() 
+    const destroyActivity = deleteDb?.destroy(); 
  
     return destroyActivity;
  };

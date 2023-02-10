@@ -1,11 +1,11 @@
-const { Router } = require('express');
+const { Router } = require("express");
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-const routesGetCountries = require('./get/routesGetCountries')
-const routesGetActivities = require('./get/routesGetActivitys') 
-const routesPostActivity = require('./post/postActivity')
-const routersPutActivity = require('./put/routesPutActivity')
-const routesDeleteActivity = require('./delete/routesDeleteActivity'); 
+const getCountries = require("./get/routesGetCountries");
+const getActivities = require("./get/routesGetActivitys"); 
+const postActivity = require("./post/postActivity");
+const putActivity = require("./put/routesPutActivity");
+const deleteActivity = require("./delete/routesDeleteActivity"); 
 
 
 const router = Router();
@@ -13,15 +13,15 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
-router.use('/countries', routesGetCountries);
+router.use("/countries", getCountries);
 
-router.use('/activities', routesGetActivities);
+router.use("/activities", getActivities);
 
-router.use('/activiti', routesPostActivity);
+router.use("/activiti", postActivity);
 
-router.use('/activiti', routersPutActivity);
+router.use("/activiti", putActivity);
 
-router.use('/activiti', routesDeleteActivity);
+router.use("/activiti", deleteActivity);
 
 
 

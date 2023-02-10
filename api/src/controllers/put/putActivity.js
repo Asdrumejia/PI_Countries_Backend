@@ -2,7 +2,7 @@ const { Activity } = require("../../db");
 
 
 const putActivity = async (id, name, difficulty, duration, season, countries) => {
-    const activityDb = await Activity.findByPk(id)
+    const activityDb = await Activity.findByPk(id);
  
    activityDb?.update({
     name: name, 

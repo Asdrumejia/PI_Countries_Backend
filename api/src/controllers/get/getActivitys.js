@@ -9,12 +9,12 @@ const getActivities = async () => {
           attributes: ["name"],
           through: {
             attributes: {
-              exclude: ["createdAt", "updateAt"],
-            },
-          },
-        },
-      ],
-    });
+              exclude: ["createdAt", "updateAt"]
+            }
+          }
+        }
+      ]
+    })
     return data;
   };
 
